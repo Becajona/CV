@@ -7,551 +7,11 @@
     <link href="css/css-gg.css" rel="stylesheet" />
     <link rel="shortcut icon" href="resources/logo.svg" type="image/svg">
     <link rel="stylesheet" href="css/site.css">
-    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/port.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="js/site.js"></script>
-    
-    <style>
-        .portfolio-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            margin-top: 50px;
-            letter-spacing: 1px;
-            color: #2b2b2b;
-            text-transform: uppercase;
-        }
-        .portfolio-subtitle {
-            font-size: 1.1rem;
-            color: #6c757d;
-            margin-bottom: 30px;
-            font-weight: 300;
-            border-bottom: 1px solid #eaeaea;
-            padding-bottom: 15px;
-            line-height: 1.6;
-        }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-        .project-card {
-            background: #ffffff;
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
-        }
-        .project-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-bottom: 1px solid #eaeaea;
-            cursor: pointer;
-        }
-        .project-card-body {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-        .project-card-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-            line-height: 1.3;
-        }
-        .project-card-text {
-            font-size: 0.9rem;
-            color: #444444;
-            line-height: 1.5;
-            flex-grow: 1;
-            margin-bottom: 12px;
-        }
-        .project-tech {
-            font-size: 0.85rem;
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
-        .project-btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: auto;
-        }
-        .btn-visit {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            padding: 8px 12px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-align: center;
-            font-weight: bold;
-            transition: background 0.2s;
-            border: none;
-        }
-        .btn-visit:hover {
-            background-color: #333333;
-            color: #ffffff;
-            text-decoration: none;
-        }
-        .btn-more {
-            background-color: transparent;
-            color: #1a1a1a;
-            border: 1px solid #eaeaea;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            text-align: center;
-            transition: border-color 0.2s, background 0.2s;
-            width: 100%;
-        }
-        .btn-more:hover {
-            border-color: #1a1a1a;
-            background-color: #f8f9fa;
-        }
-        .badge-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        /* Modales adaptados al estilo limpio */
-        .modal-content {
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-        .modal-header { border-bottom: 1px solid #eaeaea; background-color: #fdfdfd; border-radius: 8px 8px 0 0; }
-        .modal-footer { border-top: 1px solid #eaeaea; }
-        footer {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9rem;
-        }
-
-
-
-
-
-
-
-        /* ============================================
-   CERTIFICATIONS CAROUSEL SECTION
-   Professional styling for technical certifications
-   ============================================ */
-
-:root {
-  --primary-blue: #007bff;
-  --primary-dark: #0056b3;
-  --text-dark: #1a1a1a;
-  --text-light: #666;
-  --border-light: #e8e8e8;
-  --bg-light: #f8f9fa;
-  --bg-white: #ffffff;
-  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --radius-sm: 8px;
-  --radius-lg: 16px;
-  --transition: all 0.3s ease;
-}
-
-/* ---- SECTION HEADER ---- */
-.certifications-section {
-  margin-top: 60px;
-  padding: 40px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
-}
-
-.certifications-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 15px;
-  letter-spacing: 0.5px;
-}
-
-.certifications-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.certifications-divider {
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-blue), var(--primary-dark));
-  margin: 20px auto;
-  border-radius: 2px;
-}
-
-/* ---- CAROUSEL WRAPPER ---- */
-.certifications-carousel-wrapper {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--bg-white);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-light);
-  position: relative;
-}
-
-/* ---- CAROUSEL ---- */
-#certificadosCarousel {
-  width: 100%;
-}
-
-.carousel-inner {
-  background: linear-gradient(135deg, #f8f9fa 0%, var(--bg-white) 100%);
-  min-height: 500px;
-}
-
-.carousel-item {
-  transition: opacity 0.5s ease-in-out !important;
-}
-
-.carousel-item.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ---- CAROUSEL IMAGES ---- */
-.carousel-item img {
-  height: auto;
-  max-height: 450px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  padding: 30px;
-  background-color: var(--bg-white);
-  display: block;
-  margin: 0 auto;
-}
-
-/* Responsive image height */
-@media (max-width: 768px) {
-  .carousel-item img {
-    max-height: 350px;
-    padding: 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-item img {
-    max-height: 250px;
-    padding: 15px;
-  }
-}
-
-/* ---- CAROUSEL CAPTION ---- */
-.carousel-caption {
-  background: rgba(0, 91, 179, 0.95) !important;
-  color: var(--bg-white) !important;
-  padding: 12px 20px !important;
-  border-radius: var(--radius-sm);
-  bottom: 20px !important;
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
-  width: auto !important;
-  max-width: 90%;
-  position: absolute;
-  backdrop-filter: blur(8px);
-}
-
-.carousel-caption h6 {
-  margin: 0 !important;
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.4;
-  white-space: normal;
-}
-
-@media (max-width: 768px) {
-  .carousel-caption {
-    font-size: 0.85rem;
-    padding: 10px 15px !important;
-    bottom: 15px !important;
-  }
-
-  .carousel-caption h6 {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-caption {
-    display: none;
-  }
-}
-
-/* ---- CAROUSEL INDICATORS ---- */
-.carousel-indicators {
-  bottom: 20px !important;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 12px;
-  border-radius: 50px;
-  width: auto !important;
-  left: 50% !important;
-  transform: translateX(-50%);
-  margin: 0 !important;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-
-.carousel-indicators li {
-  background-color: #ccc !important;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none !important;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: var(--transition);
-}
-
-.carousel-indicators li.active {
-  background-color: var(--primary-blue) !important;
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-.carousel-indicators li:hover {
-  opacity: 1;
-  background-color: var(--primary-dark) !important;
-}
-
-/* Responsive indicators */
-@media (max-width: 576px) {
-  .carousel-indicators {
-    bottom: 10px !important;
-    padding: 8px;
-    gap: 6px;
-  }
-
-  .carousel-indicators li {
-    width: 8px;
-    height: 8px;
-  }
-}
-
-/* ---- CAROUSEL CONTROLS ---- */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 8% !important;
-  background: rgba(0, 91, 179, 0.7) !important;
-  border: none;
-  transition: var(--transition);
-  opacity: 1;
-  z-index: 1;
-}
-
-.carousel-control-prev {
-  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-}
-
-.carousel-control-next {
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background: rgba(0, 56, 179, 0.9) !important;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: brightness(1.2);
-}
-
-/* Responsive controls */
-@media (max-width: 768px) {
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 10% !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 12% !important;
-    background: rgba(0, 91, 179, 0.9) !important;
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* ---- ACCESSIBILITY ---- */
-.carousel-control-prev:focus,
-.carousel-control-next:focus {
-  outline: 2px solid var(--primary-blue);
-  outline-offset: 2px;
-}
-
-.carousel-indicators li:focus {
-  outline: 2px solid var(--primary-blue);
-  outline-offset: 2px;
-  border-radius: 50%;
-}
-
-/* Keyboard navigation support */
-.carousel-control-prev:focus-visible,
-.carousel-control-next:focus-visible {
-  outline: 2px solid var(--primary-blue);
-  outline-offset: 2px;
-}
-
-/* ---- ANIMATIONS ---- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.certifications-section {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* ---- UTILITY CLASSES ---- */
-.text-center {
-  text-align: center;
-}
-
-.mb-5 {
-  margin-bottom: 3rem;
-}
-
-/* ============================================
-   MEDIA QUERIES - RESPONSIVE DESIGN
-   ============================================ */
-
-@media (max-width: 1200px) {
-  .certifications-title {
-    font-size: 2.2rem;
-  }
-
-  .carousel-inner {
-    min-height: 450px;
-  }
-}
-
-@media (max-width: 992px) {
-  .certifications-title {
-    font-size: 2rem;
-  }
-
-  .carousel-inner {
-    min-height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  .certifications-section {
-    margin-top: 40px;
-    padding: 30px 0;
-  }
-
-  .certifications-title {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-
-  .certifications-subtitle {
-    font-size: 1rem;
-  }
-
-  .certifications-carousel-wrapper {
-    border-radius: 12px;
-  }
-
-  .carousel-inner {
-    min-height: 350px;
-  }
-}
-
-@media (max-width: 576px) {
-  .certifications-section {
-    margin-top: 30px;
-    padding: 20px 0;
-  }
-
-  .certifications-title {
-    font-size: 1.5rem;
-  }
-
-  .certifications-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .certifications-carousel-wrapper {
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  }
-
-  .carousel-inner {
-    min-height: 300px;
-  }
-
-  .carousel-item img {
-    max-height: 200px;
-  }
-}
-
-/* Dark mode support (optional) */
-@media (prefers-color-scheme: dark) {
-  .certifications-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-  }
-
-  .certifications-title {
-    color: #ffffff;
-  }
-
-  .certifications-subtitle {
-    color: #b0b0b0;
-  }
-
-  .carousel-inner {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-  }
-
-  .certifications-carousel-wrapper {
-    background: #2d2d2d;
-    border-color: #404040;
-  }
-}
-
-    </style>
+   
 </head>
 <body>
     <div class="main-content">
@@ -559,22 +19,29 @@
             <div class="profile"> 
                 <img src="UTP0155232_ Foto TSU_JONATHAN VEGA GOMEZ.JPG" id="photo-profile" class="my-photo"/>
                 <div>
-                    <h1 class="title">Jonathan Vega</h1>
-                    <div class="badge-porfile">Programador</div>
-                    <div class="social">
-                        <a href="facebook.com" target="_blank" class="gg-facebook"></a>
-                        <a href="twitter.com" target="_blank" class="gg-twitter"></a>
-                        <a href="youtube.com" target="_blank" class="gg-youtube"></a>
-                        <a href="pokemon-go.com" target="_blank" class="gg-pokemon"></a>
+                        <h1 class="title">Jonathan Vega</h1>
+                        <div class="badge-porfile">Programador</div>
+                        <div class="social">
+                            <a href="https://github.com/Becajona" target="_blank">
+                                <img src="imagenes/git.png" alt="GitHub" class="social-icon">
+                            </a>
+                            <a href="https://www.linkedin.com/in/jonathan-vega-gomez" target="_blank">
+                                <img src="imagenes/link.jpg" alt="GitHub" class="social-icon">
+                            </a>
+                            <a href="https://www.credly.com/users/jonathan-vega-gomez" target="_blank">
+                                <img src="imagenes/credly.png" alt="GitHub" class="social-icon">
+                            </a>
+                            <a href="https://jonathan015.itch.io/" target="_blank">
+                                <img src="imagenes/Itch.png" alt="GitHub" class="social-icon">
+                            </a>
+                        </div>
                     </div>
-                </div>
                 <div class="info">
                     <ul class="contacts-block">
                         <li class="contacts-block-item"><i class="gg-calendar"></i>&nbsp;&nbsp;15 de Mayo del 2026</li>
                         <li class="contacts-block-item"><i class="gg-pin"></i>&nbsp;&nbsp;Puebla, Puebla</li>
                         <li class="contacts-block-item"><i class="gg-mail"></i>&nbsp;&nbsp;<a href="mailto:erenyeager070@gmail.com">&nbsp;&nbsp;jonathanvegagomez15@</a></li>
                         <li class="contacts-block-item"><i class="gg-phone"></i>&nbsp;&nbsp;+52 22 18 95 11 03</li>
-                        <li class="contacts-block-item"><i class="gg-phone"></i>&nbsp;&nbsp;<a href="skype:">&nbsp;&nbsp;Skype:jonaa_vega</a></li>
                     </ul>
                     <a class="btn" href="resources/Elegant_CV_Jonathan_Vega_Gomez.pdf">Descargar CV</a>
                 </div>
@@ -665,6 +132,65 @@
                             </div>
                         </div>
                     </div>
+                   <div class="project-card">
+                    <img src="imagenes/logo (2).jpg" alt="Ahorratón">
+
+                    <div class="project-card-body">
+
+                        <div class="project-card-title">Ahorratón</div>
+
+                        <div class="project-card-text">
+                            Aplicación móvil enfocada en el ahorro inteligente, donde los usuarios pueden administrar sus gastos, establecer metas financieras y llevar un mejor control de su dinero de manera sencilla y dinámica.
+                        </div>
+
+                        <div class="project-tech">
+                            <strong>Tecnologías:</strong> Flutter, Dart, Firebase
+                        </div>
+
+                        <div class="project-btn-group">
+                            <a href="https://ahorraton.netlify.app"
+                            target="_blank"
+                            class="btn-visit">
+                            Visitar Página WEB
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=ahorraton.com&hl=es_419"
+                            target="_blank"
+                            class="btn-visit">
+                            Visitar Playstore
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="imagenes/tiemp.jpeg" alt="Tiempo Prestado">
+
+                    <div class="project-card-body">
+
+                        <div class="project-card-title">Tiempo Prestado</div>
+
+                        <div class="project-card-text">
+                            Videojuego independiente de aventura y suspenso donde el jugador deberá tomar decisiones importantes para descubrir la verdad detrás de un misterioso fenómeno relacionado con el tiempo.
+                        </div>
+
+                        <div class="project-tech">
+                            <strong>Tecnologías:</strong> Unity, C#, Photoshop
+                        </div>
+
+                        <div class="project-btn-group">
+                            <a href="#" target="_blank" class="btn-visit">
+                                Ver Proyecto
+                            </a>
+                            <a href="https://jonathanvega.vercel.app"
+                            target="_blank"
+                            class="btn-visit">
+                            Visitar Página WEB
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
                 </div>
 
                 <h2 class="portfolio-title">COURSERA</h2>
@@ -888,181 +414,251 @@
                 </div>
 
 
-               <section class="certifications-section" style="margin-top: 60px; padding: 40px 0;">
+
+                <section class="certifications-section">
+
     <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="certifications-title" style="font-size: 2.5rem; font-weight: 700; color: #f7e9e9; margin-bottom: 15px;">
+
+        <div class="section-header text-center">
+            <h2 class="certifications-title">
                 ESPECIALIZACIÓN TÉCNICA E IA
             </h2>
-            <p class="certifications-subtitle" style="font-size: 1.1rem; color: #868181; max-width: 600px; margin: 0 auto;">
-                Certificaciones en la nube, automatización, análisis de datos y modelos de lenguaje (LLMs)
+
+            <p class="certifications-subtitle">
+                Certificaciones en la nube, automatización,
+                análisis de datos y modelos de lenguaje (LLMs)
             </p>
-            <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #007bff, #0056b3); margin: 20px auto; border-radius: 2px;"></div>
+
+            <div class="title-line"></div>
         </div>
 
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <div class="certifications-carousel-wrapper" style="border-radius: 16px; overflow: hidden; background: #ffffff; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); border: 1px solid #e8e8e8;">
-                    
-                    <div id="certificadosCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-                        
-                        <!-- Carousel Indicators -->
-                        <ol class="carousel-indicators" style="bottom: 20px; background: rgba(255, 255, 255, 0.3); padding: 12px; border-radius: 50px; width: auto; left: 50%; transform: translateX(-50%); margin: 0;">
-                            <li data-target="#certificadosCarousel" data-slide-to="0" class="active" style="background-color: #007bff; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="1" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="2" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="3" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="4" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="5" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="6" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="7" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="8" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="9" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="10" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="11" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="12" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="13" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="14" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                            <li data-target="#certificadosCarousel" data-slide-to="15" style="background-color: #ccc; width: 10px; height: 10px; border-radius: 50%; border: none;"></li>
-                        </ol>
 
-                        <!-- Carousel Content -->
-                        <div class="carousel-inner" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
-                            
+                <div class="carousel-wrapper">
+
+                    <div id="certificadosCarousel"
+                         class="carousel slide"
+                         data-ride="carousel"
+                         data-interval="5000">
+
+                      
+
+                        <!-- Slides -->
+                        <div class="carousel-inner">
+
+                            <!-- 1 -->
                             <div class="carousel-item active">
-                                <img src="Administrar_flujos_de_nube_en_Microsoft_Power_Automate_2025_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Administrar flujos de nube">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Administrar flujos de nube en Power Automate 2025</h6>
+                                <img src="Administrar_flujos_de_nube_en_Microsoft_Power_Automate_2025_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Power Automate">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Administrar flujos de nube en Power Automate 2025</h6>
                                 </div>
                             </div>
 
+                            <!-- 2 -->
                             <div class="carousel-item">
-                                <img src="Crear_una_aplicación_de_lienzo_desde_ceros_en_Power_Apps_2024_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Crear aplicación de lienzo">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Crear aplicación de lienzo en Power Apps 2024</h6>
+                                <img src="Crear_una_aplicación_de_lienzo_desde_ceros_en_Power_Apps_2024_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Power Apps">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Crear aplicación de lienzo en Power Apps 2024</h6>
                                 </div>
                             </div>
 
+                            <!-- 3 -->
                             <div class="carousel-item">
-                                <img src="Create_Power_BI_model_relationships_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Power BI model relationships">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Create Power BI model relationships</h6>
+                                <img src="Create_Power_BI_model_relationships_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Power BI">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Create Power BI model relationships</h6>
                                 </div>
                             </div>
 
+                            <!-- 4 -->
                             <div class="carousel-item">
-                                <img src="Flutter_Development__Using_Classes_&_Objects_in_Dart_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Flutter Development">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Flutter Development: Using Classes & Objects in Dart</h6>
+                                <img src="Flutter_Development__Using_Classes_&_Objects_in_Dart_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Flutter">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Flutter Development: Using Classes & Objects in Dart</h6>
                                 </div>
                             </div>
 
+                            <!-- 5 -->
                             <div class="carousel-item">
-                                <img src="Get_started_with_Power_Automate_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Get started with Power Automate">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Get started with Power Automate</h6>
+                                <img src="Get_started_with_Power_Automate_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Power Automate">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Get started with Power Automate</h6>
                                 </div>
                             </div>
 
+                            <!-- 6 -->
                             <div class="carousel-item">
-                                <img src="Large_Language_Models_and_Key_Metrics_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Large Language Models">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Large Language Models and Key Metrics</h6>
+                                <img src="Large_Language_Models_and_Key_Metrics_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="LLM">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Large Language Models and Key Metrics</h6>
                                 </div>
                             </div>
 
+                            <!-- 7 -->
                             <div class="carousel-item">
-                                <img src="LLM_Accuracy,_Performance,_and_Trade-Offs_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="LLM Accuracy">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">LLM Accuracy, Performance, and Trade-Offs</h6>
+                                <img src="LLM_Accuracy,_Performance,_and_Trade-Offs_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="LLM Accuracy">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>LLM Accuracy, Performance, and Trade-Offs</h6>
                                 </div>
                             </div>
 
+                            <!-- 8 -->
                             <div class="carousel-item">
-                                <img src="Microsoft_Azure_Fundamentals__Azure_Management_Tools_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Azure Management Tools">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Microsoft Azure Fundamentals: Azure Management Tools</h6>
+                                <img src="Microsoft_Azure_Fundamentals__Azure_Management_Tools_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Azure Management">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Microsoft Azure Fundamentals: Azure Management Tools</h6>
                                 </div>
                             </div>
 
+                            <!-- 9 -->
                             <div class="carousel-item">
-                                <img src="Microsoft_Azure_Fundamentals__Monitoring_Azure_Services_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Monitoring Azure Services">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Microsoft Azure Fundamentals: Monitoring Azure Services</h6>
+                                <img src="Microsoft_Azure_Fundamentals__Monitoring_Azure_Services_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Azure Monitoring">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Microsoft Azure Fundamentals: Monitoring Azure Services</h6>
                                 </div>
                             </div>
 
+                            <!-- 10 -->
                             <div class="carousel-item">
-                                <img src="Performing_logical_and_conditional_calculations_in_Excel_365_(2024)_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Calculations in Excel 365">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Performing logical and conditional calculations in Excel 365 (2024)</h6>
+                                <img src="Performing_logical_and_conditional_calculations_in_Excel_365_(2024)_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Excel">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Performing logical and conditional calculations in Excel 365 (2024)</h6>
                                 </div>
                             </div>
 
+                            <!-- 11 -->
                             <div class="carousel-item">
-                                <img src="PL-300__Loading_&_Transforming_Data_in_Power_BI_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Loading & Transforming Data">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">PL-300: Loading & Transforming Data in Power BI</h6>
+                                <img src="PL-300__Loading_&_Transforming_Data_in_Power_BI_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Power BI Data">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>PL-300: Loading & Transforming Data in Power BI</h6>
                                 </div>
                             </div>
 
+                            <!-- 12 -->
                             <div class="carousel-item">
-                                <img src="PL-300__Power_BI_for_Data_Analysis_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Power BI for Data Analysis">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">PL-300: Power BI for Data Analysis</h6>
+                                <img src="PL-300__Power_BI_for_Data_Analysis_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Power BI Analysis">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>PL-300: Power BI for Data Analysis</h6>
                                 </div>
                             </div>
 
+                            <!-- 13 -->
                             <div class="carousel-item">
-                                <img src="Referencing_cells_in_Excel_365_(2023)_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Referencing cells in Excel">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Referencing cells in Excel 365 (2023)</h6>
+                                <img src="Referencing_cells_in_Excel_365_(2023)_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Excel Cells">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Referencing cells in Excel 365 (2023)</h6>
                                 </div>
                             </div>
 
+                            <!-- 14 -->
                             <div class="carousel-item">
-                                <img src="PL-300__Preparing_Data_for_Visualizations_in_Power_BI_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Preparing Data for Visualizations">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">PL-300: Preparing Data for Visualizations in Power BI</h6>
+                                <img src="PL-300__Preparing_Data_for_Visualizations_in_Power_BI_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Power BI Visualizations">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>PL-300: Preparing Data for Visualizations in Power BI</h6>
                                 </div>
                             </div>
 
+                            <!-- 15 -->
                             <div class="carousel-item">
-                                <img src="Trabajar_con_controles_de_aplicaciones_de_lienzo_en_Power_Apps_2024_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Controles de aplicaciones">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Trabajar con controles de aplicaciones de lienzo en Power Apps 2024</h6>
+                                <img src="Trabajar_con_controles_de_aplicaciones_de_lienzo_en_Power_Apps_2024_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Power Apps Controls">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Trabajar con controles de aplicaciones de lienzo en Power Apps 2024</h6>
                                 </div>
                             </div>
 
+                            <!-- 16 -->
                             <div class="carousel-item">
-                                <img src="Using_Custom_and_Conditional_Formatting_in_Excel_365_(2024)_page-0001.jpg" class="d-block w-100" style="height: 450px; object-fit: contain; padding: 30px; background-color: #ffffff;" alt="Custom Formatting in Excel">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 91, 179, 0.95); color: #ffffff; padding: 12px 20px; border-radius: 8px; bottom: 20px; left: 50%; transform: translateX(-50%); width: auto; right: auto;">
-                                    <h6 class="mb-0 font-weight-bold" style="font-size: 0.95rem;">Using Custom and Conditional Formatting in Excel 365 (2024)</h6>
+                                <img src="Using_Custom_and_Conditional_Formatting_in_Excel_365_(2024)_page-0001.jpg"
+                                    class="certificate-image"
+                                    alt="Excel Formatting">
+
+                                <div class="carousel-caption-custom">
+                                    <h6>Using Custom and Conditional Formatting in Excel 365 (2024)</h6>
                                 </div>
                             </div>
 
                         </div>
 
-                        <!-- Navigation Controls -->
-                        <button class="carousel-control-prev" type="button" data-target="#certificadosCarousel" data-slide="prev" style="width: 8%; background: rgba(0, 91, 179, 0.7); border: none; border-radius: 8px 0 0 8px; transition: all 0.3s ease;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: brightness(1.2);"></span>
-                            <span class="sr-only">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-target="#certificadosCarousel" data-slide="next" style="width: 8%; background: rgba(0, 91, 179, 0.7); border: none; border-radius: 0 8px 8px 0; transition: all 0.3s ease;">
-                            <span class="carousel-control-next-icon" aria-hidden="true" style="filter: brightness(1.2);"></span>
-                            <span class="sr-only">Siguiente</span>
-                        </button>
+                        <!-- Controles -->
+                        <a class="carousel-control-prev"
+                           href="#certificadosCarousel"
+                           role="button"
+                           data-slide="prev">
+
+                            <span class="carousel-control-prev-icon"></span>
+
+                        </a>
+
+                        <a class="carousel-control-next"
+                           href="#certificadosCarousel"
+                           role="button"
+                           data-slide="next">
+
+                            <span class="carousel-control-next-icon"></span>
+
+                        </a>
+
                     </div>
 
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
 
             </div>
-            
-        </section>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
     </div>
 
     <div class="modal fade" id="google" tabindex="-1" aria-hidden="true">
